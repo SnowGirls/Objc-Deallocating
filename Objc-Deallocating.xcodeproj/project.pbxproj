@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0004F7D729A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004F7D629A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m */; };
 		001C93512999E38100B998CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93502999E38100B998CA /* AppDelegate.m */; };
 		001C93542999E38100B998CA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93532999E38100B998CA /* SceneDelegate.m */; };
 		001C93572999E38100B998CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93562999E38100B998CA /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0004F7D529A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITouch+FixCrashOnInputKeyboard.h"; sourceTree = "<group>"; };
+		0004F7D629A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITouch+FixCrashOnInputKeyboard.m"; sourceTree = "<group>"; };
 		001C934C2999E38100B998CA /* Objc-Deallocating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Objc-Deallocating.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C934F2999E38100B998CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		001C93502999E38100B998CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 				001C93612999E38200B998CA /* main.m */,
 				001C93682999E6EA00B998CA /* WeakTestObj.h */,
 				001C93692999E6EA00B998CA /* WeakTestObj.m */,
+				0004F7D529A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.h */,
+				0004F7D629A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m */,
 			);
 			path = "Objc-Deallocating";
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				001C93572999E38100B998CA /* ViewController.m in Sources */,
+				0004F7D729A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m in Sources */,
 				001C93512999E38100B998CA /* AppDelegate.m in Sources */,
 				001C93622999E38200B998CA /* main.m in Sources */,
 				001C93542999E38100B998CA /* SceneDelegate.m in Sources */,

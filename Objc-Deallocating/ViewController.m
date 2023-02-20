@@ -1,12 +1,6 @@
 
 #import "ViewController.h"
 #import "WeakTestObj.h"
-#include <objc/runtime.h>
-
-#import "ObjcUtil.h"
-
-bool _objc_rootIsDeallocating(id _Nonnull obj);
-
 
 @interface ViewController ()
 
@@ -27,7 +21,7 @@ bool _objc_rootIsDeallocating(id _Nonnull obj);
     [self.view addSubview:buttonCrash];
     
     UIButton* buttonDismiss = [UIButton buttonWithType:UIButtonTypeSystem];
-    buttonDismiss.frame = CGRectMake(0, 150, 180, 50);
+    buttonDismiss.frame = CGRectMake(0, 200, 180, 50);
     [buttonDismiss setTitle:@"Dismiss keyboard" forState:UIControlStateNormal];
     [buttonDismiss setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [buttonDismiss addTarget:self action:@selector(eventDismissKeyboard:) forControlEvents:UIControlEventTouchUpInside];
@@ -35,11 +29,11 @@ bool _objc_rootIsDeallocating(id _Nonnull obj);
 
     // TextFields
     UITextField* textField = [[UITextField alloc] init];
-    textField.frame = CGRectMake(8, 200, 300, 50);
+    textField.frame = CGRectMake(8, 150, 300, 50);
     [textField setBorderStyle:UITextBorderStyleLine];
     [self.view addSubview:textField];
     /**
-            if y is 320, not 200, will not crash ...... fucking apple ...
+            if y is 320, not 150, will not crash ...... fucking apple ...
              so the crash relative to to textfield's y position ......
      **/
     
@@ -63,77 +57,3 @@ bool _objc_rootIsDeallocating(id _Nonnull obj);
 }
 
 @end
-
-
-#pragma mark - Category UITouch
-
-@interface UITouch (FixCrashOnInputKeyboard)
-
-@end
-
-@implementation UITouch (FixCrashOnInputKeyboard)
-
-
-static BOOL (*originalImpl)(id, SEL, UIResponder*, UIResponder*, UIEvent* ) = nil;
-
-
-- (BOOL)_wantsForwardingFromResponder:(UIResponder *)arg1 toNextResponder:(UIResponder *)arg2 withEvent:(UIEvent *)arg3 {
-    NSString* responderClassName = NSStringFromClass([arg2 class]);
-    if ([responderClassName isEqualToString:@"_UIRemoteInputViewController"]) {
-        if (_objc_rootIsDeallocating(arg2)) {
-            NSLog(@"BingGo a deallocating object ...");
-            return true;
-        }
-    }
-
-    BOOL retVal = FALSE;
-    if (originalImpl == nil) {
-        ObjcSeeker *seeker = [[ObjcSeeker alloc] init];
-        seeker.seekSkipCount = 1;
-        seeker.isSeekBackward = FALSE;
-        seeker.seekType = ObjcSeekerTypeInstance;
-        [seeker seekOriginalMethod:self selector:_cmd];
-        originalImpl = (BOOL (*)(id, SEL, UIResponder*, UIResponder*, UIEvent* ))seeker.impl;
-    }
-
-    if (originalImpl != nil) {
-        retVal = originalImpl(self, _cmd, arg1, arg2, arg3);
-    }
-    return retVal;
-}
-
-
-@end
-
-
-
- 
-#pragma mark - Categories For Checking
-
-//@interface NSSet (CheckingIssue)
-//
-//@end
-//
-//@implementation NSSet (CheckingIssue)
-//
-//- (void)enumerateObjectsUsingBlock:(void (NS_NOESCAPE ^)(id obj, BOOL *stop))block {
-//    NSArray* array = [self allObjects];
-//    NSLog(@"enumerate enumerateObjectsUsingBlock: %ld, %@", [self count], array);
-//
-//    [ObjcUtil invokeOriginalMethod:self selector:_cmd completion:^(Class clazz, IMP _Nonnull impl) {
-//        ((void (*)(id, SEL, void (NS_NOESCAPE ^)(id obj, BOOL *stop)  ))impl)(self, _cmd, ^(id obj, BOOL *stop){
-//            NSLog(@"enumerating obj: %@", obj);
-//            block(obj, stop);
-//        });
-//    }];
-//}
-//
-//- (void)enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^ NS_NOESCAPE)(id _Nonnull obj, BOOL * _Nonnull stop))block {
-//    NSLog(@"enumerate enumerateObjectsWithOptions: %ld", [self count]);
-//    [ObjcUtil invokeOriginalMethod:self selector:_cmd completion:^(Class clazz, IMP _Nonnull impl) {
-//        ((void (*)(id, SEL, NSEnumerationOptions, void (^ NS_NOESCAPE)(id _Nonnull obj, BOOL * _Nonnull stop) ))impl)(self, _cmd, opts, block);
-//    }];
-//}
-//
-//@end
-

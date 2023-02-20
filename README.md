@@ -1,6 +1,8 @@
 # Objc-Deallocating
 
 
+#### Tested on iOS 16.0 ~ iOS 16.3.1
+
 #### Fix crash for unoffical input method keyboad showing-up on double tapping TextField that with some few words
 
 objc[15904]: Cannot form weak reference to instance (0x13b5d7000) of class _UIRemoteInputViewController. It is possible that this object was over-released, or is in the process of deallocation.
