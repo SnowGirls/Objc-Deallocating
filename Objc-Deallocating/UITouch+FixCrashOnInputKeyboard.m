@@ -6,7 +6,7 @@
 #import "UITouch+FixCrashOnInputKeyboard.h"
 
 
-bool _objc_rootIsDeallocating(id _Nonnull obj);
+bool _objc_rootIsDeallocating(id _Nonnull obj);     // Use runtime private api, if you distribute a In-House/Ad-Hoc App.
 
 
 @implementation UITouch (FixCrashOnInputKeyboard)
@@ -18,7 +18,17 @@ static BOOL (*originalImpl)(id, SEL, UIResponder*, UIResponder*, UIEvent* ) = ni
 - (BOOL)_wantsForwardingFromResponder:(UIResponder *)arg1 toNextResponder:(UIResponder *)arg2 withEvent:(UIEvent *)arg3 {
     NSString* responderClassName = NSStringFromClass([arg2 class]);
     if ([responderClassName isEqualToString:@"_UIRemoteInputViewController"]) {
-        if (_objc_rootIsDeallocating(arg2)) {
+        bool isDeallocating = false;
+//        isDeallocating = _objc_rootIsDeallocating(arg2);
+
+        // Use 'performSelector' when u are develop a App-Store App.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        SEL sel = NSSelectorFromString(@"_isDeallocating");
+        isDeallocating = [arg2 respondsToSelector:sel] && [arg2 performSelector:sel];
+#pragma clang diagnostic pop
+
+        if (isDeallocating) {
             NSLog(@"BingGo a deallocating object ...");
             return true;
         }
