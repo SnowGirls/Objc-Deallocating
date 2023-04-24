@@ -170,4 +170,15 @@
 }
 
 
+#pragma mark - Static util methods
+
++(IMP) seekInstanceNextOirignalImpl:(id)target selector:(SEL)selector {
+    ObjcSeeker *seeker = [[ObjcSeeker alloc] init];
+    seeker.seekSkipCount = 1;
+    seeker.isSeekBackward = FALSE;
+    seeker.seekType = ObjcSeekerTypeInstance;
+    [seeker seekOriginalMethod:target selector:selector];
+    return seeker.impl;
+}
+
 @end

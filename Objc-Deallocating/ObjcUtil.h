@@ -33,6 +33,10 @@ typedef NS_OPTIONS(NSUInteger, ObjcSeekerType) {
 
 - (void)seekOriginalMethod:(id)target selector:(SEL)selector ;
 
+#pragma mark - Static util methods
+
++(IMP) seekInstanceNextOirignalImpl:(id)target selector:(SEL)selector ;
+    
 @end
 
 NS_ASSUME_NONNULL_END

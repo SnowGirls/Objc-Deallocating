@@ -14,7 +14,7 @@
     
     // Buttons
     UIButton* buttonCrash = [UIButton buttonWithType:UIButtonTypeSystem];
-    buttonCrash.frame = CGRectMake(0, 100, 380, 50);
+    buttonCrash.frame = CGRectMake(0, 80, 380, 50);
     [buttonCrash setTitle:@"Click Me Crash on objc_initWeak method" forState:UIControlStateNormal];
     [buttonCrash setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [buttonCrash addTarget:self action:@selector(eventCrashOnStoreWeak:) forControlEvents:UIControlEventTouchUpInside];
@@ -38,9 +38,9 @@
      **/
     
     // Labels
-    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(8, 380, 350, 250)];
-    label.numberOfLines = 8;
-    label.text = @" 1. Input some words using a un-official keyboard/input method, then dimiss the keyboard. \n 2. Double tap the textfield for showing up the un-official keyboard, crash will appear. \n 3. Note the UITextField y position should on the top half of the screen.";
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(8, 300, 350, 380)];
+    label.numberOfLines = 99;
+    label.text = @" First, do not compile \n UITouch+FixCrashOnInputKeyboard.m \n UITouch+FixCrashOnInputKeyboard.m \n\n And do: \n\n  1. Input some words using a un-official keyboard/input method, then dimiss the keyboard. \n\n 2. Double tap the textfield for showing up the un-official keyboard, crash will appear. \n\n 3. Note the UITextField y position should on the top half of the screen. ";
     [self.view addSubview:label];
 }
 

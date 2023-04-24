@@ -17,6 +17,8 @@
 		001C93622999E38200B998CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93612999E38200B998CA /* main.m */; };
 		001C936A2999E6EA00B998CA /* WeakTestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93692999E6EA00B998CA /* WeakTestObj.m */; };
 		001C936D2999F32500B998CA /* ObjcUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C936B2999F32400B998CA /* ObjcUtil.m */; };
+		00610DB329F4CCAF00040363 /* SelfApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 00610DB229F4CCAF00040363 /* SelfApplication.m */; };
+		00A39B1C29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A39B1B29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		001C93692999E6EA00B998CA /* WeakTestObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakTestObj.m; sourceTree = "<group>"; };
 		001C936B2999F32400B998CA /* ObjcUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcUtil.m; sourceTree = "<group>"; };
 		001C936C2999F32500B998CA /* ObjcUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcUtil.h; sourceTree = "<group>"; };
+		00610DB129F4CCAF00040363 /* SelfApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfApplication.h; sourceTree = "<group>"; };
+		00610DB229F4CCAF00040363 /* SelfApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfApplication.m; sourceTree = "<group>"; };
+		00A39B1A29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FixCrashOnInputKeyboard.h"; sourceTree = "<group>"; };
+		00A39B1B29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FixCrashOnInputKeyboard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,8 @@
 				001C936B2999F32400B998CA /* ObjcUtil.m */,
 				001C934F2999E38100B998CA /* AppDelegate.h */,
 				001C93502999E38100B998CA /* AppDelegate.m */,
+				00610DB129F4CCAF00040363 /* SelfApplication.h */,
+				00610DB229F4CCAF00040363 /* SelfApplication.m */,
 				001C93522999E38100B998CA /* SceneDelegate.h */,
 				001C93532999E38100B998CA /* SceneDelegate.m */,
 				001C93552999E38100B998CA /* ViewController.h */,
@@ -87,6 +95,8 @@
 				001C93692999E6EA00B998CA /* WeakTestObj.m */,
 				0004F7D529A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.h */,
 				0004F7D629A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m */,
+				00A39B1A29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.h */,
+				00A39B1B29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m */,
 			);
 			path = "Objc-Deallocating";
 			sourceTree = "<group>";
@@ -163,6 +173,8 @@
 			files = (
 				001C93572999E38100B998CA /* ViewController.m in Sources */,
 				0004F7D729A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m in Sources */,
+				00A39B1C29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m in Sources */,
+				00610DB329F4CCAF00040363 /* SelfApplication.m in Sources */,
 				001C93512999E38100B998CA /* AppDelegate.m in Sources */,
 				001C93622999E38200B998CA /* main.m in Sources */,
 				001C93542999E38100B998CA /* SceneDelegate.m in Sources */,

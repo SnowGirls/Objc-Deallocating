@@ -3,7 +3,9 @@
 
 #### Tested on iOS 16.0 ~ iOS 16.3.1
 
-#### Fix crash for unoffical input method keyboad showing-up on double tapping TextField that with some few words
+#### 1. Crash on unoffical input method keyboad showing up when double tapping TextField that with some few words
+
+#### 2. The TextField should be stay on the top half part of the screen. No creash if the TextField is on the bottom half of the screen
 
 objc[15904]: Cannot form weak reference to instance (0x13b5d7000) of class _UIRemoteInputViewController. It is possible that this object was over-released, or is in the process of deallocation.
 
@@ -14,7 +16,7 @@ objc_msgSend$_wantsForwardingFromResponder:toNextResponder:withEvent:
 
 
 
-	* thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
+    * thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
 	    frame #0: 0x00000001f3ff9bc4 libsystem_kernel.dylib`__abort_with_payload + 8
 	    frame #1: 0x00000001f401bc14 libsystem_kernel.dylib`abort_with_payload_wrapper_internal + 104
 	    frame #2: 0x00000001f401bbac libsystem_kernel.dylib`abort_with_reason + 32
@@ -44,3 +46,10 @@ objc_msgSend$_wantsForwardingFromResponder:toNextResponder:withEvent:
 	    frame #26: 0x00000001f07a1368 GraphicsServices`GSEventRunModal + 164
 	    frame #27: 0x00000001b9e30d88 UIKitCore`-[UIApplication _run] + 888
 	    frame #28: 0x00000001b9e309ec UIKitCore`UIApplicationMain + 340
+        
+        
+        
+#### How to fix?
+
+* Developing an `App-Store` App, drag `UIWindow+FixCrashOnInputKeyboard.h/m` to your xcode project and done.
+* Not care about  `App-Store` review such as Enterprise App, use `UITouch+FixCrashOnInputKeyboard.h/m` + `ObjcUtil.h/m` for more more efficient.
