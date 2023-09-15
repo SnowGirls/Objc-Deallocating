@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0004F7D729A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004F7D629A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m */; };
+		000CD1E82AB40030004E5F31 /* ObjcUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C936B2999F32400B998CA /* ObjcUtil.m */; };
+		000CD1E92AB40030004E5F31 /* UITouch+FixCrashOnInputKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 0004F7D629A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m */; };
+		000CD1EA2AB40030004E5F31 /* UIWindow+FixCrashOnInputKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A39B1B29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m */; };
 		001C93512999E38100B998CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93502999E38100B998CA /* AppDelegate.m */; };
 		001C93542999E38100B998CA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93532999E38100B998CA /* SceneDelegate.m */; };
 		001C93572999E38100B998CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93562999E38100B998CA /* ViewController.m */; };
@@ -15,10 +17,8 @@
 		001C935C2999E38200B998CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001C935B2999E38200B998CA /* Assets.xcassets */; };
 		001C935F2999E38200B998CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001C935D2999E38200B998CA /* LaunchScreen.storyboard */; };
 		001C93622999E38200B998CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93612999E38200B998CA /* main.m */; };
-		001C936A2999E6EA00B998CA /* WeakTestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93692999E6EA00B998CA /* WeakTestObj.m */; };
-		001C936D2999F32500B998CA /* ObjcUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C936B2999F32400B998CA /* ObjcUtil.m */; };
-		00610DB329F4CCAF00040363 /* SelfApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 00610DB229F4CCAF00040363 /* SelfApplication.m */; };
-		00A39B1C29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A39B1B29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m */; };
+		001C936A2999E6EA00B998CA /* TestCrash4WeakObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C93692999E6EA00B998CA /* TestCrash4WeakObj.m */; };
+		00610DB329F4CCAF00040363 /* AppApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 00610DB229F4CCAF00040363 /* AppApplication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		001C935E2999E38200B998CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001C93602999E38200B998CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		001C93612999E38200B998CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		001C93682999E6EA00B998CA /* WeakTestObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakTestObj.h; sourceTree = "<group>"; };
-		001C93692999E6EA00B998CA /* WeakTestObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakTestObj.m; sourceTree = "<group>"; };
+		001C93682999E6EA00B998CA /* TestCrash4WeakObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCrash4WeakObj.h; sourceTree = "<group>"; };
+		001C93692999E6EA00B998CA /* TestCrash4WeakObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCrash4WeakObj.m; sourceTree = "<group>"; };
 		001C936B2999F32400B998CA /* ObjcUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcUtil.m; sourceTree = "<group>"; };
 		001C936C2999F32500B998CA /* ObjcUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcUtil.h; sourceTree = "<group>"; };
-		00610DB129F4CCAF00040363 /* SelfApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfApplication.h; sourceTree = "<group>"; };
-		00610DB229F4CCAF00040363 /* SelfApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfApplication.m; sourceTree = "<group>"; };
+		00610DB129F4CCAF00040363 /* AppApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppApplication.h; sourceTree = "<group>"; };
+		00610DB229F4CCAF00040363 /* AppApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppApplication.m; sourceTree = "<group>"; };
 		00A39B1A29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FixCrashOnInputKeyboard.h"; sourceTree = "<group>"; };
 		00A39B1B29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FixCrashOnInputKeyboard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,8 +80,8 @@
 				001C936B2999F32400B998CA /* ObjcUtil.m */,
 				001C934F2999E38100B998CA /* AppDelegate.h */,
 				001C93502999E38100B998CA /* AppDelegate.m */,
-				00610DB129F4CCAF00040363 /* SelfApplication.h */,
-				00610DB229F4CCAF00040363 /* SelfApplication.m */,
+				00610DB129F4CCAF00040363 /* AppApplication.h */,
+				00610DB229F4CCAF00040363 /* AppApplication.m */,
 				001C93522999E38100B998CA /* SceneDelegate.h */,
 				001C93532999E38100B998CA /* SceneDelegate.m */,
 				001C93552999E38100B998CA /* ViewController.h */,
@@ -91,8 +91,8 @@
 				001C935D2999E38200B998CA /* LaunchScreen.storyboard */,
 				001C93602999E38200B998CA /* Info.plist */,
 				001C93612999E38200B998CA /* main.m */,
-				001C93682999E6EA00B998CA /* WeakTestObj.h */,
-				001C93692999E6EA00B998CA /* WeakTestObj.m */,
+				001C93682999E6EA00B998CA /* TestCrash4WeakObj.h */,
+				001C93692999E6EA00B998CA /* TestCrash4WeakObj.m */,
 				0004F7D529A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.h */,
 				0004F7D629A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m */,
 				00A39B1A29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.h */,
@@ -171,15 +171,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				000CD1E82AB40030004E5F31 /* ObjcUtil.m in Sources */,
+				000CD1E92AB40030004E5F31 /* UITouch+FixCrashOnInputKeyboard.m in Sources */,
+				000CD1EA2AB40030004E5F31 /* UIWindow+FixCrashOnInputKeyboard.m in Sources */,
 				001C93572999E38100B998CA /* ViewController.m in Sources */,
-				0004F7D729A33F1C00AB3415 /* UITouch+FixCrashOnInputKeyboard.m in Sources */,
-				00A39B1C29F6161200EFECB1 /* UIWindow+FixCrashOnInputKeyboard.m in Sources */,
-				00610DB329F4CCAF00040363 /* SelfApplication.m in Sources */,
+				00610DB329F4CCAF00040363 /* AppApplication.m in Sources */,
 				001C93512999E38100B998CA /* AppDelegate.m in Sources */,
 				001C93622999E38200B998CA /* main.m in Sources */,
 				001C93542999E38100B998CA /* SceneDelegate.m in Sources */,
-				001C936A2999E6EA00B998CA /* WeakTestObj.m in Sources */,
-				001C936D2999F32500B998CA /* ObjcUtil.m in Sources */,
+				001C936A2999E6EA00B998CA /* TestCrash4WeakObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

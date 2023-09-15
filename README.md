@@ -1,7 +1,8 @@
 # Objc-Deallocating
 
 
-#### Tested on iOS 16.0 ~ iOS 16.3.1
+#### Tested on iOS 16.0 ~ iOS 16.4.1
+> 2023-09-15 update: on iOS 17.0 apple Fixed this issue, you can wrap the fix code with `float os = [UIDevice currentDevice].systemVersion.floatValue; 16.0 <= os && os < 17.0` instead of `@available(iOS 16.0, *)` now.
 
 #### 1. Crash on unoffical input method keyboad showing up when double tapping TextField that with some few words
 
@@ -17,8 +18,8 @@ objc_msgSend$_wantsForwardingFromResponder:toNextResponder:withEvent:
 
 
     * thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
-	    frame #0: 0x00000001f3ff9bc4 libsystem_kernel.dylib`__abort_with_payload + 8
-	    frame #1: 0x00000001f401bc14 libsystem_kernel.dylib`abort_with_payload_wrapper_internal + 104
+        frame #0: 0x00000001f3ff9bc4 libsystem_kernel.dylib`__abort_with_payload + 8
+        frame #1: 0x00000001f401bc14 libsystem_kernel.dylib`abort_with_payload_wrapper_internal + 104
 	    frame #2: 0x00000001f401bbac libsystem_kernel.dylib`abort_with_reason + 32
 	    frame #3: 0x00000001b0cf385c libobjc.A.dylib`_objc_fatalv(unsigned long long, unsigned long long, char const*, char*) + 116
 	    frame #4: 0x00000001b0cf37e8 libobjc.A.dylib`_objc_fatal(char const*, ...) + 32
@@ -52,4 +53,4 @@ objc_msgSend$_wantsForwardingFromResponder:toNextResponder:withEvent:
 #### How to fix?
 
 * Developing an `App-Store` App, drag `UIWindow+FixCrashOnInputKeyboard.h/m` to your xcode project and done.
-* Not care about  `App-Store` review such as Enterprise App, use `UITouch+FixCrashOnInputKeyboard.h/m` + `ObjcUtil.h/m` for more more efficient.
+* Not care about  `App-Store` review such as Enterprise App, you also can use `UITouch+FixCrashOnInputKeyboard.h/m` + `ObjcUtil.h/m`.

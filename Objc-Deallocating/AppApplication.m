@@ -1,7 +1,7 @@
-#import "SelfApplication.h"
+#import "AppApplication.h"
 #import "UIWindow+FixCrashOnInputKeyboard.h"
 
-@implementation SelfApplication
+@implementation AppApplication
 
 - (void)sendEvent:(UIEvent *)event {
     // if ([UIWindow isSendEventToDealloctingObject:event]) return;

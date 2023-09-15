@@ -8,6 +8,9 @@
 
 + (void)load
 {
+    // float os = [UIDevice currentDevice].systemVersion.floatValue;
+    // if (os >= 16.0 && os < 17.0) {
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         Class class = objc_getClass("UIWindow");
@@ -18,6 +21,8 @@
         Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
         method_exchangeImplementations(originalMethod, swizzledMethod);
     });
+        
+    // }
 }
 
 - (void)sendEventEx:(UIEvent *)event {

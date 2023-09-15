@@ -1,6 +1,6 @@
 
 #import "ViewController.h"
-#import "WeakTestObj.h"
+#import "TestCrash4WeakObj.h"
 
 @interface ViewController ()
 
@@ -40,14 +40,14 @@
     // Labels
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(8, 300, 350, 380)];
     label.numberOfLines = 99;
-    label.text = @" First, do not compile \n UITouch+FixCrashOnInputKeyboard.m \n UITouch+FixCrashOnInputKeyboard.m \n\n And do: \n\n  1. Input some words using a un-official keyboard/input method, then dimiss the keyboard. \n\n 2. Double tap the textfield for showing up the un-official keyboard, crash will appear. \n\n 3. Note the UITextField y position should on the top half of the screen. ";
+    label.text = @" First for reproduce crash, do not compile: \n UITouch+FixCrashOnInputKeyboard.m \n UIWindow+FixCrashOnInputKeyboard.m \n\n And do the following steps: \n\n  1. Input some words using a un-official keyboard/input method, then dimiss the keyboard. \n\n 2. Double tap the textfield for showing up the un-official keyboard, CRASH will appear. \n\n 3. Note the UITextField y position should on the top half of the screen. ";
     [self.view addSubview:label];
 }
 
 #pragma mark - Event
 
 - (void)eventCrashOnStoreWeak:(id)button {
-    WeakTestObj* obj = [[WeakTestObj alloc] init];
+    TestCrash4WeakObj* obj = [[TestCrash4WeakObj alloc] init];
     obj = NULL;
     NSLog(@"~~~~~ Reappear Crash Done ~~~~~");
 }

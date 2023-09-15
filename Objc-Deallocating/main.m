@@ -1,7 +1,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "SelfApplication.h"
+#import "AppApplication.h"
 
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
@@ -9,7 +9,7 @@ int main(int argc, char * argv[]) {
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
-        appApplicationClassName = NSStringFromClass([SelfApplication class]);
+        appApplicationClassName = NSStringFromClass([AppApplication class]);
     }
     return UIApplicationMain(argc, argv, appApplicationClassName, appDelegateClassName);
 }

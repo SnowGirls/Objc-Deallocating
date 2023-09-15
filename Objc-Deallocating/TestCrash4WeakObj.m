@@ -1,7 +1,7 @@
 
-#import "WeakTestObj.h"
+#import "TestCrash4WeakObj.h"
 
-@implementation WeakTestObj
+@implementation TestCrash4WeakObj
 
 - (void)dealloc {
 //    __strong typeof(self) strongSelf = self;
